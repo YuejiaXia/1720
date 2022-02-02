@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Moon Cakes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <style>
+    html, body, div, header, footer {padding:0;margin:0;background:#FFE;font-family:'Arial';}
+    footer {box-sizing:border-box;position:absolute;bottom:0;width:100%;padding:10px;background:#FFF;text-align:center;}
+    button {width:100%;padding:10px 20px;font-size:14px;background:#00A854;color:#FFF;border:none;border-radius:5px;outline:none;}
+    button:isabled {background:#EEE;color:#CCC;}
+    a {display:block;text-decoration:none;color:#FFF;}
+    section {padding:60px 0;text-align:center;}
+    #count {color:#108EE9;font-size:20px;}
+    .banner {width:100%;}
+    .cat {width:30%;}
+  </style>
+</head>
+<body>
+  <div>
+    <header><img class="banner" src="./IU.png"></header>
+    <section>
+      <img class="cat" src="./cat.png">
+      <p>U click the button <span id="count">0</span> Times...</p>
+    </section>
+    <footer>
+      <button id="btn" disabled='disabled'>
+        <a id='link' href="https://image.baidu.com/search/index?tn=baiduimage&ct=201326592&lm=-1&cl=2&ie=gbk&word=iu&fr=ala&ala=1&alatpl=star&pos=0&hs=2&xthttps=111111" target="_blank">Click to get the Girl</a>
+      </button>
+    </footer>
+  </div>
+  <script>
+    window.onload = function () {
+      let $btn = document.getElementById('btn')
+      let $count = document.getElementById('count')
+      let num = $count.textContent
+      let timer = setTimeout(() => {
+        $btn.removeAttribute('disabled')
+      }, 3000)
+      $btn.onclick = function () {
+        console.log('click btn...')
+        $count.textContent = num++
+      }
+    }
+  </script>
+</body>
+</html>
